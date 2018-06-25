@@ -46,7 +46,7 @@ with tf.Session() as sess:
                if  Y_test_[idx].index(max(Y_test_[idx]))==y___[idx].index(max(y___[idx])):
                    r+=1
             print(np.mean(sess.run(loss, feed_dict={x:X_test, y_:Y_test})),r/len(Y_test))
-            #0.66701466 0.741
+            #0.52454436 0.784
 
 
 

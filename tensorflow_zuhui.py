@@ -48,7 +48,7 @@ with tf.Session() as sess:
                    r+=1
             print(np.mean(sess.run(loss, feed_dict={x:X_test, y_:Y_test})),r/len(Y_test))
             np.save('w_best.npy',sess.run(w1))
-        #0.29472113 0.8705
+        #0.15456033 0.9425
 
 
 

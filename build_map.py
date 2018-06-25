@@ -1,37 +1,68 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
-
+import math
 
 X=[]
 Y=[]
 for i in range(100000):
-    tmp=(np.random.random(3)-0.5)*4
+    if i%5000==0:
+        print(i)
+    tmp=(np.random.random(3)-0.5)*6
     x,y,z=tmp[0],tmp[1],tmp[2]
-    if x>0.75 and y>0.75 and z>0.75:
+    # if x>0.75 and y>0.75 and z>0.75:
+    #     X.append(tmp)
+    #     Y.append(0)
+    # if x<-0.75 and y>0.75 and z>0.75:
+    #     X.append(tmp)
+    #     Y.append(1)
+    # if x>0.75 and y<-0.75 and z>0.75:
+    #     X.append(tmp)
+    #     Y.append(2)
+    # if x<-0.75 and y<-0.75 and z>0.75:
+    #     X.append(tmp)
+    #     Y.append(3)
+    # if x>0.75 and y>0.75 and z<-0.75:
+    #     X.append(tmp)
+    #     Y.append(4)
+    # if x<-0.75 and y>0.75and z<-0.75:
+    #     X.append(tmp)
+    #     Y.append(5)
+    # if x>0.75 and y<-0.75 and z<-0.75:
+    #     X.append(tmp)
+    #     Y.append(6)
+    # if x<-0.75 and y<-0.75 and z<-0.75:
+    #     X.append(tmp)
+    #     Y.append(7)
+    if math.pow((x+2),2)+math.pow((y+2),2)+math.pow((z+2),2)<1:
         X.append(tmp)
         Y.append(0)
-    if x<-0.75 and y>0.75 and z>0.75:
+    if math.pow((x+2),2)+math.pow((y-2),2)+math.pow((z+2),2)<1:
         X.append(tmp)
         Y.append(1)
-    if x>0.75 and y<-0.75 and z>0.75:
+    if math.pow((x-2),2)+math.pow((y+2),2)+math.pow((z+2),2)<1:
         X.append(tmp)
         Y.append(2)
-    if x<-0.75 and y<-0.75 and z>0.75:
+    if math.pow((x-2),2)+math.pow((y-2),2)+math.pow((z+2),2)<1:
         X.append(tmp)
         Y.append(3)
-    if x>0.75 and y>0.75 and z<-0.75:
+    if math.pow((x+2),2)+math.pow((y+2),2)+math.pow((z-2),2)<1:
         X.append(tmp)
         Y.append(4)
-    if x<-0.75 and y>0.75and z<-0.75:
+    if math.pow((x+2),2)+math.pow((y-2),2)+math.pow((z-2),2)<1:
         X.append(tmp)
         Y.append(5)
-    if x>0.75 and y<-0.75 and z<-0.75:
+    if math.pow((x-2),2)+math.pow((y+2),2)+math.pow((z-2),2)<1:
         X.append(tmp)
         Y.append(6)
-    if x<-0.75 and y<-0.75 and z<-0.75:
+    if math.pow((x-2),2)+math.pow((y-2),2)+math.pow((z-2),2)<1:
         X.append(tmp)
         Y.append(7)
+
+
+
+
+
 
 def plot2():
     w = np.random.random((3, 2)) * 2 - 1
@@ -73,7 +104,7 @@ def plot3(X,Y):
     ax.set_zlabel('z')
     ax.set_ylabel('Y')
     ax.set_xlabel('X')
-    ax.view_init(elev=25, azim=-45)
+    ax.view_init(elev=135, azim=30)
     plt.show()
 
 def plot2_best():
@@ -94,6 +125,6 @@ def plot2_best():
     ax.set_xlabel('X')
     plt.show()
 
-plot2()
-# plot3(X,Y)
-#plot2_best()
+#plot2()
+#plot3(X,Y)
+plot2_best()
